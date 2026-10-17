@@ -43,24 +43,29 @@ function statusClass(status) {
           <td class="px-4 py-3 text-sm">
             <div class="flex gap-1 flex-wrap">
               <router-link :to="`/edit/${item.id}`"
-                class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded hover:bg-gray-200">
-                <i class="fas fa-edit mr-1"></i>Редактировать
+                class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded hover:bg-gray-200"
+                title="Редактировать">
+                <i class="fas fa-edit"></i>
               </router-link>
               <button v-if="item.status === 'New'" @click="emit('assign', item.id)"
-                class="text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded hover:bg-blue-100">
-                <i class="fas fa-user-plus mr-1"></i>Назначить
+                class="text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded hover:bg-blue-100"
+                title="Назначить исполнителя">
+                <i class="fas fa-user-plus"></i>
               </button>
               <button v-if="item.status === 'New' && item.assigneeUserId" @click="emit('status-change', item.id, 'InProgress')"
-                class="text-xs bg-yellow-50 text-yellow-700 px-2 py-1 rounded hover:bg-yellow-100">
-                <i class="fas fa-play mr-1"></i>В работу
+                class="text-xs bg-yellow-50 text-yellow-700 px-2 py-1 rounded hover:bg-yellow-100"
+                title="Взять в работу">
+                <i class="fas fa-play"></i>
               </button>
               <button v-if="item.status === 'InProgress'" @click="emit('status-change', item.id, 'Closed')"
-                class="text-xs bg-green-50 text-green-700 px-2 py-1 rounded hover:bg-green-100">
-                <i class="fas fa-check mr-1"></i>Закрыть
+                class="text-xs bg-green-50 text-green-700 px-2 py-1 rounded hover:bg-green-100"
+                title="Закрыть заявку">
+                <i class="fas fa-check"></i>
               </button>
               <button v-if="item.status === 'New' || item.status === 'InProgress'" @click="emit('status-change', item.id, 'Cancelled')"
-                class="text-xs bg-red-50 text-red-700 px-2 py-1 rounded hover:bg-red-100">
-                <i class="fas fa-times mr-1"></i>Отменить
+                class="text-xs bg-red-50 text-red-700 px-2 py-1 rounded hover:bg-red-100"
+                title="Отменить заявку">
+                <i class="fas fa-times"></i>
               </button>
             </div>
           </td>

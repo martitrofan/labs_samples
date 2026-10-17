@@ -41,7 +41,11 @@ function statusClass(status) {
           </td>
           <td class="px-4 py-3 text-sm text-gray-600">{{ getUserName(item.assigneeUserId) }}</td>
           <td class="px-4 py-3 text-sm">
-            <div class="flex gap-1">
+            <div class="flex gap-1 flex-wrap">
+              <router-link :to="`/edit/${item.id}`"
+                class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded hover:bg-gray-200">
+                ✏️ Редактировать
+              </router-link>
               <button v-if="item.status === 'New'" @click="emit('assign', item.id)"
                 class="text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded hover:bg-blue-100">
                 Назначить

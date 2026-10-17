@@ -19,6 +19,11 @@ const route = useRoute()
             route.path === '/new' ? 'bg-blue-100 text-blue-700' : 'text-gray-600 hover:bg-gray-100']">
           <i class="fas fa-plus mr-1"></i>Создать
         </router-link>
+        <router-link to="/docs"
+          :class="['px-3 py-2 rounded-lg text-sm font-medium transition-colors',
+            route.path === '/docs' ? 'bg-blue-100 text-blue-700' : 'text-gray-600 hover:bg-gray-100']">
+          <i class="fas fa-book mr-1"></i>Документация
+        </router-link>
         <router-link to="/login"
           :class="['px-3 py-2 rounded-lg text-sm font-medium transition-colors',
             route.path === '/login' ? 'bg-blue-100 text-blue-700' : 'text-gray-600 hover:bg-gray-100']">

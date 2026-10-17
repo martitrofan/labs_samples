@@ -83,7 +83,7 @@ onMounted(() => {
       </button>
     </div>
 
-    <TicketFilters :filters="filters" @update:filters="filters = $event" />
+    <TicketFilters :filters="filters" @update:filters="filters.value = $event" />
 
     <div v-if="screen === 'loading'" class="card text-center py-12">
       <i class="fas fa-spinner fa-spin text-4xl mb-4 text-blue-600"></i>

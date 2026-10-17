@@ -34,7 +34,9 @@ function resetFilters() {
     <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
       <div>
         <label class="block text-xs font-medium text-gray-700 mb-1">Статус</label>
-        <select :value="filters.status" @change="updateFilter('status', $event.target.value)"
+        <select 
+          :value="filters.status" 
+          @input="updateFilter('status', $event.target.value)"
           class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500">
           <option value="">Все статусы</option>
           <option value="New">Новая</option>
@@ -45,7 +47,9 @@ function resetFilters() {
       </div>
       <div>
         <label class="block text-xs font-medium text-gray-700 mb-1">Исполнитель</label>
-        <select :value="filters.assigneeId" @change="updateFilter('assigneeId', $event.target.value)"
+        <select 
+          :value="filters.assigneeId" 
+          @input="updateFilter('assigneeId', $event.target.value)"
           class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500">
           <option value="">Все исполнители</option>
           <option v-for="user in users" :key="user.id" :value="user.id">{{ user.name }}</option>
@@ -53,12 +57,18 @@ function resetFilters() {
       </div>
       <div>
         <label class="block text-xs font-medium text-gray-700 mb-1">Дата с</label>
-        <input type="date" :value="filters.dateFrom" @change="updateFilter('dateFrom', $event.target.value)"
+        <input 
+          type="date" 
+          :value="filters.dateFrom" 
+          @input="updateFilter('dateFrom', $event.target.value)"
           class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500" />
       </div>
       <div>
         <label class="block text-xs font-medium text-gray-700 mb-1">Дата по</label>
-        <input type="date" :value="filters.dateTo" @change="updateFilter('dateTo', $event.target.value)"
+        <input 
+          type="date" 
+          :value="filters.dateTo" 
+          @input="updateFilter('dateTo', $event.target.value)"
           class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500" />
       </div>
     </div>
